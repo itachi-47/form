@@ -1,47 +1,109 @@
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f4f4f4;
-    font-family: Arial, sans-serif;
-}
+<style>
+  :root{
+    --card-bg: #ffffff;
+    --page-bg: #222428;
+    --muted: #8b8f95;
+    --accent: #e6eef8;
+    --border: #d6d8db;
+    --text: #222;
+  }
+  
+  html,body{
+    height:100%;
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, var(--page-bg) 0%, #2b2d31 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
 
-/* Outer container */
-.outer-card {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-}
+  /* Card */
+  .card-wrap{
+    background: var(--card-bg);
+    border-radius:14px;
+    padding:28px 32px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    width: 640px;
+    max-width: calc(100% - 48px);
+    border: 1px solid var(--border);
+  }
 
-/* Inner card with image left and text right */
-.inner-card {
-    width: 380px;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    padding: 25px;
-    border: 2px solid #ccc;
-    border-radius: 15px;
-    background: white;
-}
+  .card{
+    display:flex;
+    align-items:center;
+    gap:24px;
+  }
 
-/* Left image block */
-.avatar {
-    width: 90px;
-    height: 90px;
-}
+  /* Avatar */
+  .avatar{
+    width:128px;
+    height:128px;
+    border-radius:14px;
+    display:inline-block;
+    overflow:hidden;
+    flex: 0 0 128px;
+    background: var(--accent);
+    border:1px solid rgba(0,0,0,0.06);
+  }
 
-/* Right text block */
-.right h2 {
-    margin: 5px 0 10px 0;
-}
+  .avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
 
-.right p {
-    margin: 3px 0;
-    font-size: 15px;
-    color: #444;
-}
+  /* Info */
+  .info{
+    flex:1;
+    min-width:0;
+  }
+
+  .name{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+    color:var(--text);
+    letter-spacing:0.1px;
+  }
+
+  .meta{
+    margin:8px 0 0;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.55;
+  }
+
+  .meta strong{
+    color:#3b3f45;
+    font-weight:600;
+  }
+
+  /* small footer text / semester */
+  .semester{
+    margin-top:14px;
+    display:inline-block;
+    background: linear-gradient(180deg,#f7fbff,#eef6ff);
+    padding:8px 12px;
+    border-radius:999px;
+    font-weight:600;
+    color:#2b4b6b;
+    border:1px solid rgba(43,75,107,0.08);
+    box-shadow: 0 6px 14px rgba(43,75,107,0.06);
+    font-size:13px;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width:520px){
+    .card{
+      flex-direction:column;
+      text-align:center;
+    }
+    .avatar{ margin-bottom:8px; }
+    .semester{ margin-top:10px; }
+  }
+</style>
