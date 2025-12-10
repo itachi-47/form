@@ -3,48 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration Form</title>
+    <title>Student Form</title>
 </head>
 <body>
-    <div class="form-container">
-        <h1>Student Registration Form</h1>
-        <form id="registrationForm">
-            <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" name="name" required>
-                <span class="error" id="nameError">Please enter your name</span>
-            </div>
-            
-            <div class="form-group">
-                <label for="enrollment">Enrollment Number *</label>
-                <input type="text" id="enrollment" name="enrollment" required>
-                <span class="error" id="enrollmentError">Please enter your enrollment number</span>
-            </div>
-            
-            <div class="form-group">
-                <label for="branch">Branch *</label>
-                <select id="branch" name="branch" required>
-                    <option value="">Select a branch</option>
-                    <option value="CS">Computer Science</option>
-                    <option value="IT">Information Technology</option>
-                    <option value="ECE">Electronics & Communication</option>
-                    <option value="ME">Mechanical Engineering</option>
-                    <option value="CE">Civil Engineering</option>
-                </select>
-                <span class="error" id="branchError">Please select a branch</span>
-            </div>
-            
-            <div class="form-group">
-                <label for="photo">Photo *</label>
-                <input type="file" id="photo" name="photo" accept="image/*" required>
-                <img id="photoPreview" class="photo-preview" alt="Photo preview">
-                <span class="error" id="photoError">Please upload a photo</span>
-            </div>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    
-   
-</body>
-</html>
+
+    <h2>Student Information Form</h2>
+
+    <form>
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Enrollment No.</label>
+        <input type="text" name="enrollment" required>
+
+        <label>Branch</label>
+        <select name="branch" required>
+            <option value="">Select Branch</option>
+            <option>Computer Science</option>
+            <option>Electronics</option>
+            <option>Mechanical</option>
+            <option>Civil</option>
+            <option>IT</option>
+        </select>
+
+        <label>Upload Photo</label>
+        <input type="file" name="photo" accept="image/*" required>
+
+        <button type="submit">Submit</button>
+    </form>
